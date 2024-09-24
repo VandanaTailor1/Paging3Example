@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10ssp"
+        android:padding="@dimen/_10sdp"
+        android:background="@color/white"
+        app:strokeColor="@color/black"
+        app:strokeWidth="@dimen/_2sdp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+        <LinearLayout
+            android:padding="@dimen/_3sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTitle"
+                android:text="Eyeshadow Palette with Mirror"
+                android:textSize="@dimen/_10ssp"
+                android:textColor="@color/black"
+                android:textStyle="italic"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDescription"
+                android:text="Eyeshadow Palette with Mirror"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/grey"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:textStyle="normal"
+                />
+        </LinearLayout>
+            <ImageView
+                android:padding="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                 android:src="@color/black"
+                android:id="@+id/ivThumbnail"
+                />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
