@@ -15,8 +15,12 @@ class PagingSource @Inject constructor(private val apiService: ApiService) : Pag
 
             LoadResult.Page(
                 data = response.products,
-                prevKey = null,
-                nextKey = if (response.products.isEmpty()) null else pageNumber + 1
+                prevKey =
+                if (pageNumber == 1) null else (pageNumber - 1),
+                //null,
+                nextKey =
+                if (pageNumber == response.products.size) null else (pageNumber + 1)
+                //if (response.products.isEmpty()) null else pageNumber + 1
             )
         } catch (e: Exception) {
             LoadResult.Error(e)

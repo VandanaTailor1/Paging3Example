@@ -1,15 +1,14 @@
-package com.pagginationexample.ui
+package com.pagginationexample.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.paging.PagingData
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.pagginationexample.databinding.ProductListBinding
 import com.pagginationexample.ui.model.Product
-import com.pagginationexample.ui.model.ProductsResponse
 
 class ProductAdapter(
     var context: Context
@@ -28,6 +27,9 @@ class ProductAdapter(
         listItem?.let {
             holder.binding.tvTitle.text = it.title
             holder.binding.tvDescription.text = it.description
+            Glide.with(context)
+                .load(it.thumbnail)
+                .into(holder.binding.ivThumbnail)
         }
     }
 

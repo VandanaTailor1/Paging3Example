@@ -1,15 +1,14 @@
-package com.pagginationexample.ui
+package com.pagginationexample.ui.view
 
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.pagginationexample.databinding.ActivityProductBinding
-import com.pagginationexample.ui.model.Product
+import com.pagginationexample.ui.adapter.ProductAdapter
 import com.pagginationexample.viewmodel.ProductViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
