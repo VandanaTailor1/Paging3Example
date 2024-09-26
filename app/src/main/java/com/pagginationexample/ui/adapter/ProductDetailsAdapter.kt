@@ -13,18 +13,14 @@ class ProductDetailsAdapter(
     val listProducts : MutableList<Product>
 ) : RecyclerView.Adapter<ProductDetailsAdapter.ViewHolder>() {
 
-    private var isLoadingAdded: Boolean = false
-    private var retryPageLoad: Boolean = false
-    private var errorMsg: String? = ""
-
-    fun addProducts(newProducts: List<Product>) {
-        val startPosition = listProducts.size
-        listProducts.addAll(newProducts)
-        notifyItemRangeInserted(startPosition, newProducts.size)
-    }
-
     inner class ViewHolder( val binding : ProductListBinding)
         : RecyclerView.ViewHolder(binding.root)
+
+    fun updateProducts(newProducts: List<Product>) {
+        val currentSize = listProducts.size
+        listProducts.addAll(newProducts)
+        notifyItemRangeInserted(currentSize, newProducts.size) // Efficient update
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding =ProductListBinding.inflate(

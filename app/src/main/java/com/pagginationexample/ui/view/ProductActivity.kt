@@ -42,11 +42,12 @@ class ProductActivity : AppCompatActivity() {
         lifecycleScope.launch {
             productViewModel.pagingDataFlow.collectLatest { pagingData ->
                 Log.d("data", "getProductsApi: $pagingData")
-                // Submit the paging data to the adapter
                 adapterProduct.submitData(pagingData)
             }
         }
     }
+
+
 
 
 }

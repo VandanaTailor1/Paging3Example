@@ -29,13 +29,11 @@ class ProductsPager @Inject constructor(private val apiService: ApiService) {
         ).flow
     }
 
-    fun getItemsOfProduct(
-        skip : Int,
-         limit: Int
-    ): Flow<ProductsResponse> = flow {
+
+    fun getItemsOfProduct(skip: Int, limit: Int): Flow<ProductsResponse> = flow {
         val response = apiService.getProducts(skip, limit)
         emit(response)
     }.catch { e ->
-        Log.d("dataerror", "getStatus: " + e.message)
+        Log.e("dataerror", "getStatus: " + e.message)
     }.flowOn(Dispatchers.IO)
 }
